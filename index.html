@@ -7,14 +7,14 @@
   <style>
     body {
       font-family: Georgia, "Times New Roman", serif;
-      max-width: 680px;
+      max-width: 960px;
       margin: 40px auto;
       padding: 0 20px;
       line-height: 1.6;
       color: #222;
     }
     nav {
-      margin-bottom: 40px;
+      margin-bottom: 48px;
       padding-bottom: 12px;
       border-bottom: 1px solid #ddd;
       font-family: Arial, sans-serif;
@@ -25,15 +25,57 @@
       text-decoration: none;
       margin-right: 6px;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover { text-decoration: underline; }
+    a { color: #1a4b8c; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero img {
+      width: 100%;
+      max-width: 340px;
+      display: block;
     }
     h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
+      font-size: 44px;
+      font-weight: normal;
+      margin: 0 0 12px 0;
     }
-    a {
-      color: #1a4b8c;
+    .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .card {
+      border: 1px solid #222;
+      padding: 28px;
+    }
+    .card h2 {
+      font-size: 24px;
+      font-weight: normal;
+      margin-top: 0;
+    }
+    .card p {
+      font-size: 16px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      border: 1px solid #222;
+      color: #222;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; }
     }
   </style>
 </head>
@@ -45,7 +87,17 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <h1>Siri Maddineni</h1>
-  <p>CS student at DSATM, interested in AI interpretability, AI safety and computational neuroscience.</p>
+  <h1>Hi, I'm Siri</h1>
+  <p class="subtitle">CS student · DSATM, Bangalore</p>
+
+  <div class="hero">
+    <img src="photo.jpg" alt="Siri Maddineni">
+
+    <div class="card">
+      <h2>[Your one-paragraph introduction goes here.]</h2>
+      <p>[Two or three sentences on what you're working on and what you're curious about. Write this in your own words, the way you'd explain it to a professor.]</p>
+      <a class="button" href="blog.html">Read the blog →</a>
+    </div>
+  </div>
 </body>
 </html>
