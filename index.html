@@ -4,132 +4,173 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Siri Maddineni</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Mrs+Saint+Delafield&family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
   <style>
     html, body { height: 100%; }
     body {
       margin: 0;
-      background: #f7efec;
-      color: #3a1f1f;
-      font-family: "Inter", Arial, sans-serif;
-      line-height: 1.5;
+      color: #1c1c1c;
+      font-family: "Playfair Display", Georgia, serif;
+      background-color: #f2f2f0;
+      background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size: 4px 4px;
     }
     .wrap {
-      max-width: 1100px;
+      max-width: 1200px;
       height: 100vh;
-      min-height: 620px;
+      min-height: 680px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 40px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      box-sizing: border-box;
     }
+
+    /* Header */
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      padding: 20px 0;
-      font-size: 12px;
-      letter-spacing: 0.08em;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+      padding: 28px 0 18px;
+      border-bottom: 1px solid #d8d8d6;
+      font-family: "Raleway", Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-    nav a {
-      color: #3a1f1f;
-      text-decoration: none;
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 40px;
     }
+    .nav-left { justify-content: flex-end; }
+    .nav-right { justify-content: flex-start; }
+    nav a { color: #1c1c1c; text-decoration: none; }
     nav a:hover { text-decoration: underline; }
     nav .current { font-weight: 500; }
-
-    h1 {
-      font-family: "Pinyon Script", cursive;
-      font-weight: 400;
-      font-size: clamp(44px, 6vw, 72px);
-      line-height: 1.1;
-      text-align: center;
-      margin: 8px 0 16px;
+    .brand {
+      font-family: "Mrs Saint Delafield", cursive;
+      font-size: 44px;
+      text-transform: none;
+      letter-spacing: 0;
+      line-height: 1;
+      padding: 0 16px;
     }
 
-    .hero {
+    /* Main stage */
+    .stage {
       position: relative;
       flex: 1;
       min-height: 0;
     }
-    .hero .photo {
+
+    /* Photo on stacked paper */
+    .photo-wrap {
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 0;
-      height: 80%;
-      width: 40%;
-      background: #2a1a1a;
-      overflow: hidden;
+      left: 18%;
+      top: 8%;
+      width: 30%;
+      height: 84%;
     }
-    .hero .photo img {
+    .paper {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    }
+    .paper.back-1 { transform: rotate(-3deg) translate(-6px, 4px); }
+    .paper.back-2 { transform: rotate(2deg) translate(8px, -2px); }
+    .paper.front {
+      padding: 14px 14px 14px;
+      box-sizing: border-box;
+      transform: rotate(-1deg);
+    }
+    .paper.front img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
+      filter: grayscale(100%);
     }
-    .card {
+
+    /* About text */
+    .about {
       position: absolute;
-      left: 62%;
-      top: 38%;
-      width: 20%;
-      min-width: 200px;
-      background: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 16px rgba(58, 31, 31, 0.08);
+      left: 56%;
+      top: 22%;
+      width: 36%;
     }
-    .card h2 {
+    .about h2 {
+      font-family: "Pinyon Script", cursive;
+      font-weight: 400;
+      font-size: 72px;
+      line-height: 1;
+      margin: 0 0 4px;
+    }
+    .about h3 {
       font-family: "Playfair Display", Georgia, serif;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 1.25;
-      margin: 0 0 10px;
+      font-size: 30px;
+      letter-spacing: 0.02em;
+      margin: 0 0 20px;
     }
-    .card p {
-      font-size: 13px;
-      margin: 0 0 14px;
+    .about p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0 0 28px;
     }
     .button {
       display: inline-block;
-      padding: 8px 12px;
-      border: 1px solid #3a1f1f;
-      color: #3a1f1f;
+      padding: 10px 18px;
+      border: 1px solid #1c1c1c;
+      color: #1c1c1c;
       text-decoration: none;
-      font-size: 12px;
+      font-family: "Raleway", Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
     }
-    .button:hover { background: #3a1f1f; color: #fff; }
+    .button:hover { background: #1c1c1c; color: #fff; }
 
+    /* Mobile */
     @media (max-width: 760px) {
-      .wrap { height: auto; min-height: 0; }
-      .hero { flex: none; height: auto; display: flex; flex-direction: column; gap: 24px; }
-      .hero .photo { position: relative; width: 100%; height: 380px; left: 0; transform: none; }
-      .card { position: relative; left: auto; top: auto; width: auto; min-width: 0; }
+      .wrap { height: auto; min-height: 0; padding: 0 20px; }
+      nav { grid-template-columns: 1fr; justify-items: center; gap: 14px; }
+      .nav-left, .nav-right { justify-content: center; gap: 20px; }
+      .stage { display: flex; flex-direction: column; gap: 32px; padding-top: 32px; }
+      .photo-wrap, .about { position: relative; left: auto; top: auto; width: 100%; height: 420px; }
+      .about { height: auto; }
+      .about h2 { font-size: 56px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <nav>
-      <a class="current" href="index.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <div class="nav-left">
+        <a class="current" href="index.html">About</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <a class="brand" href="index.html">Siri Maddineni</a>
+      <div class="nav-right">
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
 
-    <h1>Siri Maddineni</h1>
-
-    <div class="hero">
-      <div class="photo">
-        <img src="photo.jpg" alt="Siri Maddineni">
+    <div class="stage">
+      <div class="photo-wrap">
+        <div class="paper back-2"></div>
+        <div class="paper back-1"></div>
+        <div class="paper front">
+          <img src="photo.jpg" alt="Siri Maddineni">
+        </div>
       </div>
 
-      <div class="card">
-        <h2>[One line in your own words about who you are.]</h2>
-        <p>[Two or three sentences on what you're working on and what you're curious about.]</p>
+      <div class="about">
+        <h2>About me</h2>
+        <h3>HI, I'M SIRI</h3>
+        <p>[Two or three sentences in your own words: what you study, what you're working on, and what you're curious about.]</p>
         <a class="button" href="blog.html">Read the blog →</a>
       </div>
     </div>
