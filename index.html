@@ -66,11 +66,12 @@
 
     /* Photo on stacked paper */
     .photo-wrap {
-      position: absolute;
-      left: 14%;
-      top: 6%;
-      width: 36%;
-      aspect-ratio: 950 / 903;
+        position: absolute;
+        left: 14%;
+        top: 6%;
+        height: 84%;
+        width: auto;
+        aspect-ratio: 950 / 903;
     }
     .paper {
       position: absolute;
@@ -88,8 +89,9 @@
     .paper.front img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       display: block;
+      object-position: center center;
       background: #fff;
     }
 
